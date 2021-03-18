@@ -1,3 +1,27 @@
+# google-meet-BLE-NUS-remote
+
+** This extension is a very loose fork from `google-meet-push-to-talk` by [BashVideo](https://github.com/BashVideo/google-meet-push-to-talk). The previous README at the point of fork can be found below **
+
+This is a simple extension that allows you to mute and unmute yourself using a remote device that connects over Bluetooth Low Energy. It supports BLE devices that use the Nordic Uart Service (NUS). The commands received/sent are hard-coded to support sample firmware featuring the Open Hardware Summit 2020 Badge, a circuitPython project. However this project was designed to act as an example for other simple BLE protocols.
+
+BashVideo/google-meet-push-to-talk was chosen as an arbitrary starting point for an extension targetting google meet. This project diverges significantly from the original project: we add hardware support for a BLE remote. 
+
+## To use:
+* First deploy the sample script to a OHSummit 2020 Badge PCB, or a compatible CircuitPython board.
+    * TODO - link to the sample project!
+* Then install this extension to your browser
+* Join a Google Meet
+* Upon opening the meet link, a popup should appear requesting connection to a BLE device
+    * If a popup does not appear, refresh the page and be careful to keep your cursor within the Meet window
+* Select the correct entry, that probably starts with CIRCUITPY
+* Once connected the screen should change to display a logo
+* Press buttonD (upper right hand corner) to unmute
+* Press buttonC (upper left hand corner) to mute
+* Mute status should be displayed as icons on the screen
+
+If you run into issues, inspect the javascript console on the meet window, and debug further from there.
+
+
 # google-meet-push-to-talk
 
 Simple extension that allows you to mute and unmute yourself with a key press instead of fumbling around trying to click the icon.

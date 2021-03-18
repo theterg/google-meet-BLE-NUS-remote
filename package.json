@@ -1,21 +1,21 @@
 {
-  "name": "google-meet-push-to-talk",
-  "version": "1.1.1",
-  "description": "Simple extension that allows you to mute and unmute yourself with the space bar instead of fumbling around trying to click the button.",
+  "name": "google-meet-BLE-NUS-remote",
+  "version": "0.1.0",
+  "description": "Simple extension that allows you to mute and unmute yourself using a remote device, accessed over BLE using the NUS service.",
   "scripts": {
     "build": "webpack",
     "build:dev": "NODE_ENV=development webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MoonriseCo/google-meet-push-to-talk.git"
+    "url": "git+https://github.com/theterg/google-meet-BLE-NUS-remote.git"
   },
-  "author": "Andrew Grim",
+  "author": "Andrew Tergis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MoonriseCo/google-meet-push-to-talk/issues"
+    "url": "https://github.com/theterg/google-meet-BLE-NUS-remote/issues"
   },
-  "homepage": "https://github.com/MoonriseCo/google-meet-push-to-talk#readme",
+  "homepage": "https://github.com/theterg/google-meet-BLE-NUS-remote#readme",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",

@@ -2,3 +2,5 @@
 releases
 dist
 node_modules
+*.pem
+*.crx
