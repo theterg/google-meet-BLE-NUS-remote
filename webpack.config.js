@@ -61,6 +61,10 @@ module.exports = (env) => {
         filename: "options.html",
         chunks: ["options"],
       }),
+      new HtmlWebpackPlugin({
+        filename: "background.html",
+        chunks: ["background"],
+      }),
       new ZipPlugin({
         path: path.join(__dirname, "releases"),
         filename: `ptt-${process.env.npm_package_version}.zip`,
