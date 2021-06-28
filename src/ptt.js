@@ -13,11 +13,19 @@ const MIC_ON = {
   ja: "マイクをオンにする"
 }
 
+const VIDEO_OFF = {
+  en: "Turn off camera",
+}
+
+const VIDEO_ON = {
+  en: "Turn on camera",
+}
+
 let currentHotkey, keydownToggle, keyupToggle;
 
 const currentLanguage = () => window.navigator.language.split("-")[0];
 
-const micButtonSelector = (tip) => `[data-tooltip*='${tip}']`;
+const micButtonSelector = (tip) => `[aria-label*='${tip}']`;
 
 const toggle = (hotkey, tip) => {
   // actual event listener
@@ -82,6 +90,20 @@ const micIsMuted = () => {
     return true;
 }
 
+const toggleVideo = () => {
+    const button = getVideo();
+    button.click();
+}
+
+// Retrieve a reference to the Mute/Unmute button
+const getVideo = () => {
+    let button = document.querySelector(micButtonSelector(VIDEO_ON[currentLanguage()]));
+    if (!button) {
+      button = document.querySelector(micButtonSelector(VIDEO_OFF[currentLanguage()]));
+    }
+    return button;
+}
+
 // Retrieve a reference to the Mute/Unmute button
 const getButton = () => {
     const button = document.querySelector(micButtonSelector(MIC_ON[currentLanguage()]));
@@ -140,6 +162,14 @@ window.addEventListener('ble-disconnected', function(e) {
  }
 });
 
+window.testfunc = function() {
+  chrome.runtime.sendMessage({action: "closetab"}, function(response) {
+    console.log('closetab response', response);
+  });
+};
+
+var port = null;
+
 // Automatically attempt to connect to BLE once page is completely loaded
 // TODO - Add a UI element to connect instead (and show connection status)
 window.addEventListener("load", function() {
@@ -164,6 +194,12 @@ window.addEventListener("notification", function(e) {
     if (button) {
         button.click();
     }
+  } else if (e.detail == 'buttonB') {
+    toggleVideo();
+  } else if (e.detail == 'buttonA') {
+    chrome.runtime.sendMessage({action: "closetab"}, function(response) {
+      console.log('closetab response', response);
+    });
   } else {
     console.log("unhandled notification " + e.detail);
   }

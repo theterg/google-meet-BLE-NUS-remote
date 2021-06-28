@@ -12,3 +12,14 @@ chrome.runtime.onInstalled.addListener(function () {
     ]);
   });
 });
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    if (('action' in request)&&(request.action == "closetab")) {
+      sendResponse({ok: 'Goodbye'});
+      chrome.tabs.remove(sender.tab.id);
+    } else {
+      sendResponse({error: 'Bad action'});
+    }
+  }
+);
