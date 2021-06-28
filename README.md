@@ -8,7 +8,7 @@ BashVideo/google-meet-push-to-talk was chosen as an arbitrary starting point for
 
 ## To use:
 * First deploy the sample script to a OHSummit 2020 Badge PCB, or a compatible CircuitPython board.
-    * TODO - link to the sample project!
+    * The sample script is a part of [oshwabadge2020/apps](https://github.com/oshwabadge2020/apps/tree/master/ble_uart_simple)
 * Then install this extension to your browser
 * Join a Google Meet
 * Upon opening the meet link, a popup should appear requesting connection to a BLE device
